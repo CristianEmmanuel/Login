@@ -1,6 +1,8 @@
 import java.util.Objects;
 import java.util.Scanner;
 
+import static java.lang.System.out;
+
 public class Main {
 
     private static String Luis;
@@ -8,42 +10,48 @@ public class Main {
     public static void main(String[] args) {
         String name = "Luis";
         int password = 1234;
-
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please enter your name");
+        out.println("Please enter your name");
         name = scanner.nextLine();
 
         if (Objects.equals(name, "Luis")) {
-            System.out.println("Please enter your password");
+            int primerNumero;
+            int segundoNumero;
+
+
+            out.println("Please enter your password");
             password = scanner.nextInt();
-            System.out.println("Whats operation do you like to make ?? sum, rest, multiplication or division");
+            out.println("Whats operation do you like to make ?? sum, rest, multiplication or division");
+            String operacion = scanner.next();
 
-            System.out.print( "Introduzca el primer número: " );
-            int primerNumero = scanner.nextInt();
-            System.out.print( "Introduzca el segundo número: " );
-            int segundoNumero = scanner.nextInt();
+            out.print("Introduzca el primer número: ");
+            primerNumero = scanner.nextInt();
+            out.print("Introduzca el segundo número: ");
+            segundoNumero = scanner.nextInt();
 
-            int suma   = primerNumero + segundoNumero;
-            int resta  = primerNumero - segundoNumero;
-            int mult   = primerNumero * segundoNumero;
-            int div    = primerNumero / segundoNumero;
-            int modulo = primerNumero % segundoNumero;
+            int suma = 0;
+            int resta = 0;
+            int multiplicacion = 0;
+            int division = 0;
+            int resto = 0;
+            int resultado = 0;
 
-            System.out.print("Suma :");
-            System.out.println(suma );
-            System.out.print("Resta :");
-            System.out.println(resta);
-            System.out.print("Multiplicacion :");
-            System.out.println(mult);
-            System.out.print("Division :");
-            System.out.println(div);
-            System.out.print("Modulo :");
-            System.out.println(modulo);
+            if(operacion.equals("suma")){resultado = primerNumero + segundoNumero;}
+            if(operacion.equals("resta")){resultado = primerNumero - segundoNumero;}
+            if(operacion.equals("multiplicacion")){resultado = primerNumero * segundoNumero;}
+            if(operacion.equals("division")){resultado = primerNumero / segundoNumero;}
+            if(operacion.equals("resto")){resultado = primerNumero % segundoNumero;}
 
 
-        } else {
-            System.out.println("Fuck Of Here");}
+            System.out.print("El resultado es : " + resultado);
+
+
+        }else{
+                out.println("Fuck Of Here");
+            }
         }
-
     }
+
+
+
