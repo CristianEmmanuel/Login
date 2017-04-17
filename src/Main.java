@@ -23,7 +23,8 @@ public class Main {
             int primerNumero = scanner.nextInt();
             System.out.print( "Introduzca el segundo número: " );
             int segundoNumero = scanner.nextInt();
-            int suma   = primerNumero + segundoNumero
+
+            int suma   = primerNumero + segundoNumero;
             int resta  = primerNumero - segundoNumero;
             int mult   = primerNumero * segundoNumero;
             int div    = primerNumero / segundoNumero;
